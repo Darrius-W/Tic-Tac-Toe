@@ -17,49 +17,49 @@ html, body{
     background-color: transparent;
 }
 
-#num-1{
+#b1{
     border: 5px;
     border-color: #562320;
     border-style: none solid solid none;
 }
 
-#num-2{
+#b2{
     border: 5px;
     border-color: #562320;
     border-style: none none solid none;
 }
 
-#num-3{
+#b3{
     border: 5px;
     border-color: #562320;
     border-style: none none solid solid;
 }
 
-#num-4{
+#b4{
     border: 5px;
     border-color: #562320;
     border-style: none solid solid none;
 }
 
-#num-5{
+#b5{
     border: 5px;
     border-color: #562320;
     border-style: none solid solid none;
 }
 
-#num-6{
+#b6{
     border: 5px;
     border-color: #562320;
     border-style: none none solid none;
 }
 
-#num-7{
+#b7{
     border: 5px;
     border-color: #562320;
     border-style: none solid none none;
 }
 
-#num-8{
+#b8{
     border: 5px;
     border-color: #562320;
     border-style: none solid none none;
@@ -126,9 +126,4 @@ html, body{
 #board{
     margin: 0 auto;
     width: 350px;
-}
-
-#num-1{
-    color: blue;
-    background-color: green;
 }
