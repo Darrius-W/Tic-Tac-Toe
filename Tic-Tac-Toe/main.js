@@ -10,9 +10,6 @@ let countO = 0;
 let playXwins = 0;
 let playOwins = 0;
 
-function test(){
-    console.alert("hello");
-}
 
 // Add X or O
 function addSym(id){
