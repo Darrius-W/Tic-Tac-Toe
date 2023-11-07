@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title" id="card-hdr"><b>Tic-Tac-Toe</b></h5>
+
+          <div class="score-box">
+            <h5 id="score-hdr"><u><strong>Score</strong></u></h5>
+            <div class="wins">
+              <p id="x-wins"><i>X wins: 0</i></p>
+              <p id="o-wins"><i>O wins: 0</i></p>
+            </div>
+          </div>
+
+          <p id="player-turn"><strong>X's turn</strong></p>
+
+          <p class="display-winner"></p>
+
+          <div class="container text-center" id="board">
+            <div class="btn-row row gx-1 flex-nowrap">
+              <div class="col" id="num-1"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-2"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-3"><button class="btn" type="button"></button></div>
+            </div>
+            <div class="btn-row row gx-1 flex-nowrap">
+              <div class="col" id="num-4"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-5"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-6"><button class="btn" type="button"></button></div>
+            </div>
+            <div class="btn-row row gx-1 flex-nowrap">
+              <div class="col" id="num-7"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-8"><button class="btn" type="button"></button></div>
+              <div class="col" id="num-9"><button class="btn" type="button"></button></div>
+            </div>
+            <div class="row gx-1">
+              <button class="btn" id="reset-btn" type="button">Reset Board</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
