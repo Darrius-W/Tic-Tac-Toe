@@ -127,3 +127,8 @@ html, body{
     margin: 0 auto;
     width: 350px;
 }
+
+#num-1{
+    color: blue;
+    background-color: green;
+}

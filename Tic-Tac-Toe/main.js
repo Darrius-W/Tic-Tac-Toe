@@ -9,3 +9,35 @@ let countX = 0;
 let countO = 0;
 let playXwins = 0;
 let playOwins = 0;
+
+function test(){
+    console.alert("hello");
+}
+
+// Add X or O
+function addSym(id){
+    var elem = document.getElementById(id);
+
+    if (elem.innerHTML == "X" || elem.innerHTML == "O"){
+        return;
+    }
+
+    count++;
+    
+    if (count % 2 == 0){
+        elem.innerHTML = "X";
+        // Store element value
+        arrX[countX] = elem.getAttribute("value");
+        countX++;
+        //checkMatch("X");
+        //displayPlayerTurn("O");
+    }
+    else{
+        elem.innerHTML = "O";
+        // Store element value
+        arrO[countO] = elem.getAttribute("value");
+        countO++;
+        //checkMatch("O");
+        //displayPlayerTurn("X");
+    }
+}
