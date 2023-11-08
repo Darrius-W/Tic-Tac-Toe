@@ -27,7 +27,7 @@ function addSym(id){
         arrX[countX] = elem.getAttribute("value");
         countX++;
         checkMatch("X");
-        //displayPlayerTurn("O");
+        displayPlayerTurn("O");
     }
     else{
         elem.innerHTML = "O";
@@ -35,7 +35,7 @@ function addSym(id){
         arrO[countO] = elem.getAttribute("value");
         countO++;
         checkMatch("O");
-        //displayPlayerTurn("X");
+        displayPlayerTurn("X");
     }
 }
 
@@ -75,4 +75,9 @@ function displayWinner(winner, pattern){
     else{
         alert("No winner!");
     }
+}
+
+// Function to display whos turn it is
+function displayPlayerTurn(turn){
+    document.getElementById("player-turn").innerHTML = turn + "'s turn";
 }
