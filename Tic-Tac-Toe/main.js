@@ -60,7 +60,7 @@ function checkMatch(val){
 
 // Function to change everything to show winner
 function displayWinner(winner, pattern){
-    //highlightWinn(pattern);
+    highlightWinn(pattern);
     //document.getElementById("display-winner").innerHTML = winner + " Wins!!";
     //document.getElementById("display-winner").style.fontSize = "24px";
     
@@ -80,4 +80,25 @@ function displayWinner(winner, pattern){
 // Function to display whos turn it is
 function displayPlayerTurn(turn){
     document.getElementById("player-turn").innerHTML = turn + "'s turn";
+}
+
+
+// Function to highlight win pattern
+function highlightWinn(pattern){
+    if (pattern == 99){
+        document.getElementById("num-1").style.color = "black";
+        document.getElementById("num-2").style.color = "black";
+        document.getElementById("num-3").style.color = "black";
+        document.getElementById("num-4").style.color = "black";
+        document.getElementById("num-5").style.color = "black";
+        document.getElementById("num-6").style.color = "black";
+        document.getElementById("num-7").style.color = "black";
+        document.getElementById("num-8").style.color = "black";
+        document.getElementById("num-9").style.color = "black";
+    }
+    else{
+        document.getElementById("num-" + win[pattern][0]).style.color = "blue";
+        document.getElementById("num-" + win[pattern][1]).style.color = "blue";
+        document.getElementById("num-" + win[pattern][2]).style.color = "blue";
+    }
 }
