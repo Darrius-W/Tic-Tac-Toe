@@ -26,7 +26,7 @@ function addSym(id){
         // Store element value
         arrX[countX] = elem.getAttribute("value");
         countX++;
-        //checkMatch("X");
+        checkMatch("X");
         //displayPlayerTurn("O");
     }
     else{
@@ -34,7 +34,7 @@ function addSym(id){
         // Store element value
         arrO[countO] = elem.getAttribute("value");
         countO++;
-        //checkMatch("O");
+        checkMatch("O");
         //displayPlayerTurn("X");
     }
 }
@@ -45,14 +45,34 @@ function checkMatch(val){
     
     for (let i = 0; i < 8; i++){
 
-        if (document.getElementById("button-" + win[i][0]).innerHTML == val){
-            if (document.getElementById("button-" + win[i][1]).innerHTML == val){
-                if (document.getElementById("button-" + win[i][2]).innerHTML == val){
+        if (document.getElementById("num-" + win[i][0]).innerHTML == val){
+            if (document.getElementById("num-" + win[i][1]).innerHTML == val){
+                if (document.getElementById("num-" + win[i][2]).innerHTML == val){
                     alert("Winner is " + val + "!!");
                     //disableBtns();
-                    //displayWinner(val, i);
+                    displayWinner(val, i);
                 }
             }
         }
+    }
+}
+
+
+// Function to change everything to show winner
+function displayWinner(winner, pattern){
+    //highlightWinn(pattern);
+    //document.getElementById("display-winner").innerHTML = winner + " Wins!!";
+    //document.getElementById("display-winner").style.fontSize = "24px";
+    
+    if (winner == "O"){
+        playOwins += 1;
+        document.getElementById("o-wins").innerHTML = ("O wins: " + playOwins);
+    }
+    else if (winner == "X"){
+        playXwins += 1;
+        document.getElementById("x-wins").innerHTML = ("X wins: " + playXwins);
+    }
+    else{
+        alert("No winner!");
     }
 }
