@@ -130,3 +130,32 @@ function enableBtns(){
     document.getElementById("num-8").disabled = false;
     document.getElementById("num-9").disabled = false;
 }
+
+
+// Function reset to reset the gameboard, count, countX, countO, arrX, arrO
+function reset(){
+    let btns = ["num-1", "num-2", "num-3",
+                "num-4", "num-5", "num-6",
+                "num-7", "num-8", "num-9"];
+
+    // Reset board
+    for(let cnt = 0; cnt <= 8; cnt++){
+        elem = document.getElementById(btns[cnt]);
+
+        if(elem.innerHTML != cnt+1){
+            elem.innerHTML = "";
+        }
+    }
+
+    // Reset arrays & counts
+    arrX = [];
+    arrO = [];
+    countO = 0;
+    countX = 0;
+
+    // Reset buttons
+    enableBtns();
+    highlightWinn(99);
+
+    //document.getElementById("win-state").innerHTML = "";
+}
