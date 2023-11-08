@@ -49,7 +49,7 @@ function checkMatch(val){
             if (document.getElementById("num-" + win[i][1]).innerHTML == val){
                 if (document.getElementById("num-" + win[i][2]).innerHTML == val){
                     alert("Winner is " + val + "!!");
-                    //disableBtns();
+                    disableBtns();
                     displayWinner(val, i);
                 }
             }
@@ -101,4 +101,18 @@ function highlightWinn(pattern){
         document.getElementById("num-" + win[pattern][1]).style.color = "blue";
         document.getElementById("num-" + win[pattern][2]).style.color = "blue";
     }
+}
+
+
+// Disable the buttons after a win
+function disableBtns(){
+    document.getElementById("num-1").disabled = true;
+    document.getElementById("num-2").disabled = true;
+    document.getElementById("num-3").disabled = true;
+    document.getElementById("num-4").disabled = true;
+    document.getElementById("num-5").disabled = true;
+    document.getElementById("num-6").disabled = true;
+    document.getElementById("num-7").disabled = true;
+    document.getElementById("num-8").disabled = true;
+    document.getElementById("num-9").disabled = true;
 }
