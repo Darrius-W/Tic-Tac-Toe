@@ -38,3 +38,21 @@ function addSym(id){
         //displayPlayerTurn("X");
     }
 }
+
+
+// Check array for match
+function checkMatch(val){
+    
+    for (let i = 0; i < 8; i++){
+
+        if (document.getElementById("button-" + win[i][0]).innerHTML == val){
+            if (document.getElementById("button-" + win[i][1]).innerHTML == val){
+                if (document.getElementById("button-" + win[i][2]).innerHTML == val){
+                    alert("Winner is " + val + "!!");
+                    //disableBtns();
+                    //displayWinner(val, i);
+                }
+            }
+        }
+    }
+}
