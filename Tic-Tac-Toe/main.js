@@ -116,3 +116,17 @@ function disableBtns(){
     document.getElementById("num-8").disabled = true;
     document.getElementById("num-9").disabled = true;
 }
+
+
+// Function to enable the buttons for new game
+function enableBtns(){
+    document.getElementById("num-1").disabled = false;
+    document.getElementById("num-2").disabled = false;
+    document.getElementById("num-3").disabled = false;
+    document.getElementById("num-4").disabled = false;
+    document.getElementById("num-5").disabled = false;
+    document.getElementById("num-6").disabled = false;
+    document.getElementById("num-7").disabled = false;
+    document.getElementById("num-8").disabled = false;
+    document.getElementById("num-9").disabled = false;
+}
