@@ -97,9 +97,9 @@ function highlightWinn(pattern){
         document.getElementById("num-9").style.color = "black";
     }
     else{
-        document.getElementById("num-" + win[pattern][0]).style.color = "blue";
-        document.getElementById("num-" + win[pattern][1]).style.color = "blue";
-        document.getElementById("num-" + win[pattern][2]).style.color = "blue";
+        document.getElementById("num-" + win[pattern][0]).style.color = "green";
+        document.getElementById("num-" + win[pattern][1]).style.color = "green";
+        document.getElementById("num-" + win[pattern][2]).style.color = "green";
     }
 }
 
