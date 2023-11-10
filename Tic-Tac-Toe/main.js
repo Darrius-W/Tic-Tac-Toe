@@ -51,6 +51,7 @@ function checkMatch(val){
                     alert("Winner is " + val + "!!");
                     disableBtns();
                     displayWinner(val, i);
+                    break;
                 }
             }
         }
@@ -63,7 +64,7 @@ function displayWinner(winner, pattern){
     highlightWinn(pattern);
     //document.getElementById("display-winner").innerHTML = winner + " Wins!!";
     //document.getElementById("display-winner").style.fontSize = "24px";
-    
+
     if (winner == "O"){
         playOwins += 1;
         document.getElementById("o-wins").innerHTML = ("O wins: " + playOwins);
