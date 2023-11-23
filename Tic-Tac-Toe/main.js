@@ -11,7 +11,7 @@ let playXwins = 0;
 let playOwins = 0;
 
 
-// Add X or O
+// User makes a move
 function userMove(id){
     var elem = document.getElementById(id);
 
