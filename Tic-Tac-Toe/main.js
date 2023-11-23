@@ -12,7 +12,7 @@ let playOwins = 0;
 
 
 // Add X or O
-function addSym(id){
+function userMove(id){
     var elem = document.getElementById(id);
 
     if (elem.innerHTML == "X" || elem.innerHTML == "O"){
