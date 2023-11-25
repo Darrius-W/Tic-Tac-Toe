@@ -1,10 +1,10 @@
-let count = 0;
+let totalMoves = 0;
 const win = [[1,2,3], [4,5,6], [7,8,9],
              [1,4,7], [2,5,8], [3,6,9],
              [1,5,9], [3,5,7]
             ];
-let arrX = [];
-let arrO = [];
+let xMoves = [];
+let oMoves = [];
 let countX = 0;
 let countO = 0;
 let playXwins = 0;
@@ -13,27 +13,33 @@ let playOwins = 0;
 
 // User makes a move
 function userMove(id){
-    var elem = document.getElementById(id);
+    // Grab button of the user's move
+    var playerMove = document.getElementById(id);
 
-    if (elem.innerHTML == "X" || elem.innerHTML == "O"){
+    // Don't allow user to click taken move
+    if (playerMove.innerHTML == "X" || playerMove.innerHTML == "O"){
         return;
     }
 
-    count++;
-    
-    if (count % 2 == 0){
-        elem.innerHTML = "X";
-        // Store element value
-        arrX[countX] = elem.getAttribute("value");
+    totalMoves++;
+
+    // Calcuate player turn
+    if (totalMoves % 2 == 0){ // X turn
+        playerMove.innerHTML = "X";
+        // Store player move
+        xMoves[countX] = playerMove.getAttribute("value");
         countX++;
+        // Check if player won
         checkMatch("X");
+        // Display next player's turn
         displayPlayerTurn("O");
     }
-    else{
-        elem.innerHTML = "O";
-        // Store element value
-        arrO[countO] = elem.getAttribute("value");
+    else{ // O turn
+        playerMove.innerHTML = "O";
+
+        oMoves[countO] = playerMove.getAttribute("value");
         countO++;
+
         checkMatch("O");
         displayPlayerTurn("X");
     }
@@ -133,7 +139,7 @@ function enableBtns(){
 }
 
 
-// Function reset to reset the gameboard, count, countX, countO, arrX, arrO
+// Function reset to reset the gameboard, count, countX, countO, xMoves, oMoves
 function reset(){
     let btns = ["num-1", "num-2", "num-3",
                 "num-4", "num-5", "num-6",
@@ -149,8 +155,8 @@ function reset(){
     }
 
     // Reset arrays & counts
-    arrX = [];
-    arrO = [];
+    xMoves = [];
+    oMoves = [];
     countO = 0;
     countX = 0;
 
