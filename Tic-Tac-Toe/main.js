@@ -77,7 +77,7 @@ function checkIfWin(playerSym){
 }
 
 
-// Function to change everything to show winner
+// Declare winner and update score
 function displayWinner(winner, winPattern){
     // Declare winner
     alert("Winner is " + winner + "!!");
@@ -95,9 +95,9 @@ function displayWinner(winner, winPattern){
     }
 }
 
-// Function to display whos turn it is
-function displayPlayerTurn(turn){
-    document.getElementById("player-turn").innerHTML = turn + "'s turn";
+// Determine player turn
+function displayPlayerTurn(player){
+    document.getElementById("player-turn").innerHTML = player + "'s turn";
 }
 
 
@@ -138,15 +138,9 @@ function disableBtns(){
 
 // Function to enable the buttons for new game
 function enableBtns(){
-    document.getElementById("num-1").disabled = false;
-    document.getElementById("num-2").disabled = false;
-    document.getElementById("num-3").disabled = false;
-    document.getElementById("num-4").disabled = false;
-    document.getElementById("num-5").disabled = false;
-    document.getElementById("num-6").disabled = false;
-    document.getElementById("num-7").disabled = false;
-    document.getElementById("num-8").disabled = false;
-    document.getElementById("num-9").disabled = false;
+    for (let i = 1; i < 10; i++){
+        document.getElementById("num-" + i).disabled = false;
+    }
 }
 
 
