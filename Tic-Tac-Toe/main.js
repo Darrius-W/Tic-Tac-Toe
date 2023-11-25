@@ -122,21 +122,15 @@ function highlightWinn(pattern){
 }
 
 
-// Disable the buttons after a win
+// Disable all buttons after a win
 function disableBtns(){
-    document.getElementById("num-1").disabled = true;
-    document.getElementById("num-2").disabled = true;
-    document.getElementById("num-3").disabled = true;
-    document.getElementById("num-4").disabled = true;
-    document.getElementById("num-5").disabled = true;
-    document.getElementById("num-6").disabled = true;
-    document.getElementById("num-7").disabled = true;
-    document.getElementById("num-8").disabled = true;
-    document.getElementById("num-9").disabled = true;
+    for (let i = 1; i < 10; i++){
+        document.getElementById("num-" + i).disabled = true;
+    }
 }
 
 
-// Function to enable the buttons for new game
+// Enable all buttons upon game reset
 function enableBtns(){
     for (let i = 1; i < 10; i++){
         document.getElementById("num-" + i).disabled = false;
