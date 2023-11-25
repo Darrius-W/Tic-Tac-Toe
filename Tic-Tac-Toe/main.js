@@ -1,5 +1,6 @@
 let totalMoves = 0;
-const win = [[1,2,3], [4,5,6], [7,8,9],
+// Array containing all possible win cases
+const possWins = [[1,2,3], [4,5,6], [7,8,9],
              [1,4,7], [2,5,8], [3,6,9],
              [1,5,9], [3,5,7]
             ];
@@ -12,9 +13,9 @@ let playOwins = 0;
 
 
 // User makes a move
-function userMove(id){
+function userMove(boardBtn){
     // Grab button of the user's move
-    var playerMove = document.getElementById(id);
+    var playerMove = document.getElementById(boardBtn);
 
     // Don't allow user to click taken move
     if (playerMove.innerHTML == "X" || playerMove.innerHTML == "O"){
@@ -30,7 +31,7 @@ function userMove(id){
         xMoves[countX] = playerMove.getAttribute("value");
         countX++;
         // Check if player won
-        checkMatch("X");
+        checkIfWin("X");
         // Display next player's turn
         displayPlayerTurn("O");
     }
@@ -40,23 +41,28 @@ function userMove(id){
         oMoves[countO] = playerMove.getAttribute("value");
         countO++;
 
-        checkMatch("O");
+        checkIfWin("O");
         displayPlayerTurn("X");
     }
 }
 
 
-// Check array for match
-function checkMatch(val){
+// Determine if there is a winning match
+function checkIfWin(playerSym){
     
-    for (let i = 0; i < 8; i++){
+    // Cycle through all potential win cases
+    for (let winCase = 0; winCase < 8; winCase++){
 
-        if (document.getElementById("num-" + win[i][0]).innerHTML == val){
-            if (document.getElementById("num-" + win[i][1]).innerHTML == val){
-                if (document.getElementById("num-" + win[i][2]).innerHTML == val){
-                    alert("Winner is " + val + "!!");
+        // Comparing players current moves to all possible win cases
+        if (document.getElementById("num-" + possWins[winCase][0]).innerHTML == playerSym){
+            if (document.getElementById("num-" + possWins[winCase][1]).innerHTML == playerSym){
+                if (document.getElementById("num-" + possWins[winCase][2]).innerHTML == playerSym){ // There is a winner
+                                        
+                    // Apply winner case
+                    displayWinner(playerSym, winCase);
+
+                    // Disallow any further moves after declared winner
                     disableBtns();
-                    displayWinner(val, i);
                     break;
                 }
             }
@@ -67,6 +73,7 @@ function checkMatch(val){
 
 // Function to change everything to show winner
 function displayWinner(winner, pattern){
+    alert("Winner is " + winner + "!!");
     highlightWinn(pattern);
     //document.getElementById("display-winner").innerHTML = winner + " Wins!!";
     //document.getElementById("display-winner").style.fontSize = "24px";
@@ -104,9 +111,9 @@ function highlightWinn(pattern){
         document.getElementById("num-9").style.color = "black";
     }
     else{
-        document.getElementById("num-" + win[pattern][0]).style.color = "green";
-        document.getElementById("num-" + win[pattern][1]).style.color = "green";
-        document.getElementById("num-" + win[pattern][2]).style.color = "green";
+        document.getElementById("num-" + possWins[pattern][0]).style.color = "green";
+        document.getElementById("num-" + possWins[pattern][1]).style.color = "green";
+        document.getElementById("num-" + possWins[pattern][2]).style.color = "green";
     }
 }
 
