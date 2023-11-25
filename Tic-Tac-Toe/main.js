@@ -101,23 +101,17 @@ function displayPlayerTurn(player){
 }
 
 
-// Function to highlight win pattern
-function highlightWinn(pattern){
-    if (pattern == 99){
-        document.getElementById("num-1").style.color = "black";
-        document.getElementById("num-2").style.color = "black";
-        document.getElementById("num-3").style.color = "black";
-        document.getElementById("num-4").style.color = "black";
-        document.getElementById("num-5").style.color = "black";
-        document.getElementById("num-6").style.color = "black";
-        document.getElementById("num-7").style.color = "black";
-        document.getElementById("num-8").style.color = "black";
-        document.getElementById("num-9").style.color = "black";
+// Highlight winner's win pattern
+function highlightWinn(winPattern){
+    if (winPattern == 99){ // Reset color because new game
+        for (let i = 1; i < 10; i++){
+            document.getElementById("num-" + i).style.color = "black";
+        }
     }
-    else{
-        document.getElementById("num-" + possWins[pattern][0]).style.color = "green";
-        document.getElementById("num-" + possWins[pattern][1]).style.color = "green";
-        document.getElementById("num-" + possWins[pattern][2]).style.color = "green";
+    else{ // Highlight win pattern
+        for (let i = 0; i < 3; i++){
+            document.getElementById("num-" + possWins[winPattern][i]).style.color = "green";
+        }
     }
 }
 
