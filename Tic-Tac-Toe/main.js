@@ -49,7 +49,8 @@ function userMove(boardBtn){
 
 // Determine if there is a winning match
 function checkIfWin(playerSym){
-    
+    let isWinner = false;
+
     // Cycle through all potential win cases
     for (let winCase = 0; winCase < 8; winCase++){
 
@@ -57,9 +58,10 @@ function checkIfWin(playerSym){
         if (document.getElementById("num-" + possWins[winCase][0]).innerHTML == playerSym){
             if (document.getElementById("num-" + possWins[winCase][1]).innerHTML == playerSym){
                 if (document.getElementById("num-" + possWins[winCase][2]).innerHTML == playerSym){ // There is a winner
-                                        
+                                    
                     // Apply winner case
                     displayWinner(playerSym, winCase);
+                    isWinner = true;
 
                     // Disallow any further moves after declared winner
                     disableBtns();
@@ -68,16 +70,21 @@ function checkIfWin(playerSym){
             }
         }
     }
+    // If no winner announce tie
+    if (totalMoves == 9 && isWinner == false){
+        alert("No winner!");
+    }
 }
 
 
 // Function to change everything to show winner
-function displayWinner(winner, pattern){
+function displayWinner(winner, winPattern){
+    // Declare winner
     alert("Winner is " + winner + "!!");
-    highlightWinn(pattern);
-    //document.getElementById("display-winner").innerHTML = winner + " Wins!!";
-    //document.getElementById("display-winner").style.fontSize = "24px";
+    // Display the win pattern
+    highlightWinn(winPattern);
 
+    // Increment winning player score
     if (winner == "O"){
         playOwins += 1;
         document.getElementById("o-wins").innerHTML = ("O wins: " + playOwins);
@@ -85,9 +92,6 @@ function displayWinner(winner, pattern){
     else if (winner == "X"){
         playXwins += 1;
         document.getElementById("x-wins").innerHTML = ("X wins: " + playXwins);
-    }
-    else{
-        alert("No winner!");
     }
 }
 
@@ -166,6 +170,7 @@ function reset(){
     oMoves = [];
     countO = 0;
     countX = 0;
+    totalMoves = 0;
 
     // Reset buttons
     enableBtns();
