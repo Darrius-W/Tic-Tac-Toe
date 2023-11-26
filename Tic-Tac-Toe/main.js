@@ -132,22 +132,14 @@ function enableBtns(){
 }
 
 
-// Function reset to reset the gameboard, count, countX, countO, xMoves, oMoves
+// Reset gameboard
 function reset(){
-    let btns = ["num-1", "num-2", "num-3",
-                "num-4", "num-5", "num-6",
-                "num-7", "num-8", "num-9"];
-
-    // Reset board
-    for(let cnt = 0; cnt <= 8; cnt++){
-        elem = document.getElementById(btns[cnt]);
-
-        if(elem.innerHTML != cnt+1){
-            elem.innerHTML = "";
-        }
+    // Reset all board buttons
+    for (let i = 1; i < 10; i++){
+        document.getElementById("num-" + i).innerHTML = "";
     }
 
-    // Reset arrays & counts
+    // Reset moves & counts
     xMoves = [];
     oMoves = [];
     countO = 0;
@@ -157,6 +149,4 @@ function reset(){
     // Reset buttons
     enableBtns();
     highlightWinn(99);
-
-    //document.getElementById("win-state").innerHTML = "";
 }
