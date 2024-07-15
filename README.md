@@ -4,7 +4,7 @@ A website where challengers come together to compete against one-another in an i
 
 Program offers a comfortable & fully-responsive UI design built utilizing HTML/CSS, JavaScript and the Bootstrap framework.
 
-Game features include dynamic scorekeeping, a fun UI design, and clear & concise game sense.
+Game features include dynamic scorekeeping, a fun UI design, and clear & concise game communication.
 
 This application has been hosted and deployed using AWS at: <br />
 https://tinyurl.com/DWTicTacToe <br /><br />
